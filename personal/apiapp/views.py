@@ -1,10 +1,13 @@
-# from django.shortcuts import render
-from rest_framework import generics, viewsets
-from .models import Engineer
-from .serializers import EngineerSerializer
+from rest_framework import viewsets
+from .models import Engineer, Manager
+from .serializers import EngineerSerializer, ManagerSerializer
 
 
-# Create your views here.
 class EngineerViewSet(viewsets.ModelViewSet):
     queryset = Engineer.objects.all()
     serializer_class = EngineerSerializer
+
+
+class ManagerViewSet(viewsets.ModelViewSet):
+    queryset = Manager.objects.all()
+    serializer_class = ManagerSerializer
